@@ -14,7 +14,7 @@
 
 copy自己的地址如http://example.org
 
-将**http://example.org**替换**ShellCodeLoader/Source.c**的152行，生成64位发行版即可
+将http://example.org 替换 ShellCodeLoader/Source.c 的152行，生成64位发行版即可
 
 ## Test
 ![Untitled 1](https://github.com/1K0ng/C_Sep_Loader/assets/156843472/759f6998-71ff-4a03-abd9-71fb40cc7eeb)
