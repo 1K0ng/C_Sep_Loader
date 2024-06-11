@@ -17,12 +17,10 @@ copy自己的地址如http://example.org
 将http://example.org替换**ShellCodeLoader/Source.c的152行，生成64位发行版即可**
 
 ## Test
+![Untitled 1](https://github.com/1K0ng/C_Sep_Loader/assets/156843472/759f6998-71ff-4a03-abd9-71fb40cc7eeb)
+![Untitled 2](https://github.com/1K0ng/C_Sep_Loader/assets/156843472/98f20b30-548a-4980-be96-c8886ce8956e)
+![Untitled](https://github.com/1K0ng/C_Sep_Loader/assets/156843472/8de5f3b4-ee6b-4ea7-b52d-2c3f2ce0c553)
 
-![Untitled](C_Sep_Loader%208dcd4f04e7e941a480b9ed1d1b3ef0a8/Untitled.png)
-
-![Untitled](C_Sep_Loader%208dcd4f04e7e941a480b9ed1d1b3ef0a8/Untitled%201.png)
-
-![Untitled](C_Sep_Loader%208dcd4f04e7e941a480b9ed1d1b3ef0a8/Untitled%202.png)
 
 ## ps
 
