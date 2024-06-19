@@ -12,7 +12,7 @@
 
 将生成的result.txt上传到Web端（Oss,跳板等机器）
 
-copy自己的地址如http://example.org并进行[base64编码](https://www.base64decode.org/)
+copy自己的地址如http://example.org 并进行[base64编码](https://www.base64decode.org/)
 
 将http://example.org_base64 替换 ShellCodeLoader/Source.c 的170行，生成64位发行版即可
 
