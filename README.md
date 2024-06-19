@@ -22,7 +22,7 @@ copy自己的地址如http://example.org 并进行[base64编码](https://www.bas
 ![Untitled](https://github.com/1K0ng/C_Sep_Loader/assets/156843472/8de5f3b4-ee6b-4ea7-b52d-2c3f2ce0c553)
 
 ## Log
-2024.6.20 小更一下，~~摸会鱼~~，后续有空再更。
+2024.6.20 小更一下，~~摸会鱼~~，后续有时间再更。
 ![1718819544107](https://github.com/1K0ng/C_Sep_Loader/assets/156843472/c62b5dee-6b47-44c6-adc4-c587f4affab2)
 ![image](https://github.com/1K0ng/C_Sep_Loader/assets/156843472/16a8195f-752b-47b4-a0a1-1bc17975d8dc)
 ![image](https://github.com/1K0ng/C_Sep_Loader/assets/156843472/210c7460-6e2f-4919-986f-594b05e11c77)
