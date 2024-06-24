@@ -37,7 +37,7 @@ Email:1K0ng@proton.me 请标明来意。
 
 ## Star History
 
-[![Star History Chart](https://api.star-history.com/svg?repos=1K0ng/C_Sep_Loader&type=Date)](https://star-history.com/#1K0ng/C_Sep_Loader&Date)
+[![Star History Chart](https://api.star-history.com/svg?repos=1K0ng/C_Sep_Loader&type=Date)]
 
 
 
