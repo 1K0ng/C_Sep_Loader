@@ -35,7 +35,9 @@ copy自己的地址如http://example.org 并进行[base64编码](https://www.bas
 ## Contact
 Email:1K0ng@proton.me 请标明来意。
 
-https://star-history.com/#1K0ng/C_Sep_Loader&Date
+## Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=1K0ng/C_Sep_Loader&type=Date)](https://star-history.com/#1K0ng/C_Sep_Loader&Date)
 
 
 
