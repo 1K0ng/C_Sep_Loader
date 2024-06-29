@@ -37,7 +37,8 @@ Go1.20以上,[Garble](https://github.com/burrowers/garble)，使用garble进行�
     main.exe 5L2g5ZKL5Zue5LqL5bCP5LyZ5a2Q5oOz5bmy5Zib(base64编码过的地址)
 
 ## Log
-2024.6.20 小更一下，~~摸会鱼~~，后续有时间再更。
+2024.6.20 小更一下，~~摸会鱼~~，增加了一层url_base64编码，后续有时间再更。
+
 2024.6.29 使用go重构项目，采用分离加载，原理同C版本。
 ![image](https://github.com/1K0ng/C_Sep_Loader/assets/156843472/b08c2b23-1199-48a1-a3a8-f217b6cffa0b)
 ![image](https://github.com/1K0ng/C_Sep_Loader/assets/156843472/88721c70-28fc-4c32-a9b5-589ae29535cb)
