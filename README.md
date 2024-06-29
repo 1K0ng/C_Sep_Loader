@@ -28,7 +28,7 @@ copy自己的地址如http://example.org 并进行[base64编码](https://www.bas
 
 copy自己的地址如http://example.org 并进行[base64编码](https://www.base64decode.org/)
 
-Go1.20以上,[Garble](https://github.com/burrowers/garble)，使用garble进行编译
+Go1.20以上,[Garble](https://github.com/burrowers/garble)，进入Go_Sep_Loader目录下使用garble进行编译
 
     garble -seed=random build main.go
 
